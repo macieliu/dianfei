@@ -8,6 +8,7 @@ SYSID = os.environ.get("SYSID")
 ROOMID = os.environ.get("ROOMID")
 AREAID = os.environ.get("AREAID")
 BUILDID = os.environ.get("BUILDID")
+TOPICIDS = os.environ.get("TOPICIDS")
 
 
 def fetch_electricity_bill_html(sysid, roomid, areaid, buildid):
@@ -44,7 +45,7 @@ def wxpusher(content):
         "appToken": APPTOKEN,
         "content": content,  # 主体内容
         "contentType": 1,  # 文本
-        "uids": [UIDS],
+        "topicIds": [TOPICIDS],  # 主题id
     }
     result = requests.post(url=webapi, json=data, headers=headers)
     return result.text

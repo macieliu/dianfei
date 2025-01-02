@@ -29,5 +29,6 @@ jobs:
           ROOMID: ${{ secrets.ROOMID }}
           AREAID: ${{ secrets.AREAID }}
           BUILDID: ${{ secrets.BUILDID }}
+          TOPICIDS: ${{ secrets.TOPICIDS }}
         run: |
           python main.py
